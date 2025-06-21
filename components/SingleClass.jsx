@@ -26,6 +26,8 @@ import {
 import axios from "axios"
 import { Api } from "@/app/apis/api";
 import moment from "moment"
+import toast from "react-toastify"
+
 
 export default function ClassPage() {
   const [classData, setClassData] = useState(null)
@@ -73,6 +75,7 @@ export default function ClassPage() {
   const handleLogout = () => {
     document.cookie = "auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;"
     localStorage.removeItem("user_data")
+     toast.succuss("Logout SuccessFully")
     router.push("/login")
   }
 
