@@ -5,8 +5,13 @@ import {
  
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useRouter } from "next/navigation"
+
+
 
 function Navbar({fetchClasses,refreshing}) {
+
+  const router = useRouter()
 
      const handleLogout = () => {
     document.cookie = "auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;"
